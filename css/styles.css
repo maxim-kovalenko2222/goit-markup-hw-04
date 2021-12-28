@@ -147,13 +147,13 @@ ul {
 
 /* добавляет марджин и удаляет марджин последнему элементу */
 .nav-contacts .header-item + .header-item {
-  margin-left: 50px;
+  margin-left: 30px;
 }
 
 .nav-mail,
 .nav-tel {
   /* увеличивает ширину ховера через добавление падингов */
-  display: block;
+  display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -165,6 +165,7 @@ ul {
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
+
 .nav-mail:hover,
 .nav-mail:focus {
   color: var(--hover-color);
@@ -175,15 +176,69 @@ ul {
   color: var(--hover-color);
 }
 
+/* .header-item {
+  outline: 1px solid red;
+} */
+
+/* Добавление иконок перед элементом и ховер для них */
+
+/* .nav-mail::before {
+  content: "";
+  width: 16px;
+  height: 12px;
+
+  margin-right: 10px;
+  background-image: url(#);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.nav-mail:hover::before,
+.nav-mail:focus::before {
+  background-image: url(#);
+}
+
+.nav-tel::before {
+  content: "";
+  width: 10px;
+  height: 16px;
+
+  margin-right: 10px;
+  background-image: url(#);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.nav-tel:hover::before,
+.nav-tel:focus::before {
+  background-image: url(#);
+} */
+
 /* Герой */
 
 .hero {
-  background-color: #2f303a;
+  max-width: 1600px;
+  height: 600px;
+
   text-align: center;
 
   padding-top: 200px;
   padding-bottom: 200px;
+
+  background-color: #c4c4c4;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero-bg.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
+
 .hero-title {
   max-width: 696px;
   margin-left: auto;
@@ -247,6 +302,48 @@ ul {
   display: flex;
 }
 
+.content-item:before {
+  content: "";
+  display: block;
+  height: 120px;
+  background-color: #f5f4fa;
+  margin-bottom: 30px;
+}
+
+/* Добавление иконок через псевдоэлементы */
+
+.content-item:nth-child(1)::before {
+  background-image: url(../images/svg/antenna.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content-item:nth-child(2)::before {
+  background-image: url(../images/svg/clock.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content-item:nth-child(3)::before {
+  background-image: url(../images/svg/computer.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content-item:nth-child(4)::before {
+  background-image: url(../images/svg/astronaut.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Задать иконки разным блокам */
+
+/* .content-item:nth-child(1)::before {
+  background-color: red;
+} */
+
+/* либо создать доп классы ли */
+
 .content-item {
   width: 270px;
 }
@@ -307,18 +404,66 @@ ul {
 .team-list {
   display: flex;
 
-  /* flex-wrap: wrap; */
-  /* margin-left: -30px; */
+  flex-wrap: wrap;
+  margin-left: -30px;
 }
 
-/* .team-item {
+.team-item {
   flex-basis: calc(100% / 4 - 30px);
 
   margin-left: 30px;
 
-} */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
 
-.team-list .team-item + .team-item {
+.team-item:nth-child(n + 2) {
+  margin-left: 30px;
+}
+
+.team-social-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.team-social-item {
+  width: 44px;
+  height: 44px;
+  outline: 1px solid red;
+}
+
+.team-social-item:nth-child(n + 2) {
+  margin-left: 10px;
+}
+
+/* Клиенты */
+.clients-title {
+  text-align: center;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  letter-spacing: 0.03em;
+  margin-bottom: 50px;
+}
+
+.clients-list {
+  display: flex;
+  justify-content: center;
+}
+
+.clients-item {
+  background-color: #e5e5e5;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.clients-item:nth-child(n + 2) {
   margin-left: 30px;
 }
 
@@ -356,16 +501,14 @@ ul {
   letter-spacing: 0.03em;
 
   margin-top: 20px;
+  margin-bottom: 9px;
 }
 
 .contacts {
   display: flex;
-  flex-direction: column;
 }
 
 .address-contacts {
-  display: flex;
-  flex-direction: column;
   margin-top: 9px;
 }
 
@@ -375,6 +518,7 @@ ul {
 
 .address-mail,
 .address-tel {
+  display: block;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
 
@@ -391,6 +535,38 @@ ul {
 .address-tel:hover,
 .address-tel:focus {
   color: var(--hover-color);
+}
+
+/* пример оформления иконок соц сетей */
+
+.footer-social-links {
+  margin-top: 12px;
+  margin-left: 70px;
+}
+
+.footer-links-title {
+  margin-bottom: 20px;
+
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.footer-social-list {
+  display: flex;
+}
+
+.footer-social-item {
+  width: 44px;
+  height: 44px;
+  outline: 1px solid red;
+}
+
+.footer-social-item:nth-child(n + 2) {
+  margin-left: 10px;
 }
 
 /* -------------------------------------------------- */
@@ -420,6 +596,7 @@ ul {
 
   padding: 6px 22px;
 
+  border-color: transparent;
   border-radius: 4px;
 }
 
@@ -427,6 +604,8 @@ ul {
 .filters-button:focus {
   color: #ffffff;
   background-color: var(--hover-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .filters-list {
@@ -477,6 +656,13 @@ ul {
 
   margin-top: -30px;
   margin-left: -30px;
+}
+
+.projects-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+
+  cursor: pointer;
 }
 
 .projects-list > .projects-item {
