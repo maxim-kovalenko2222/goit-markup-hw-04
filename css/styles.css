@@ -446,7 +446,7 @@ ul {
 .team-social-link {
   width: 44px;
   height: 44px;
-  background-color: #ffffff;
+  background-color: var(--hero-color);
   fill: #afb1b8;
 
   display: flex;
@@ -457,7 +457,7 @@ ul {
 
 .team-social-link:hover {
   background-color: var(--hover-color);
-  fill: #ffffff;
+  fill: var(--hero-color);
 }
 
 /* Клиенты */
