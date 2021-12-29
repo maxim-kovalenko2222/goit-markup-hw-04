@@ -154,6 +154,8 @@ ul {
 .nav-tel {
   /* увеличивает ширину ховера через добавление падингов */
   display: flex;
+  flex-direction: row-reverse;
+
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -164,16 +166,24 @@ ul {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  fill: var(--second-color);
+}
+
+.header-social-icon {
+  margin-right: 10px;
 }
 
 .nav-mail:hover,
 .nav-mail:focus {
   color: var(--hover-color);
+  fill: var(--hover-color);
 }
 
 .nav-tel:hover,
 .nav-tel:focus {
   color: var(--hover-color);
+  fill: var(--hover-color);
 }
 
 /* .header-item {
@@ -312,25 +322,25 @@ ul {
 /* Добавление иконок через псевдоэлементы */
 
 .content-item:nth-child(1)::before {
-  background-image: url(../images/svg/antenna.svg);
+  background-image: url(../images/antenna.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .content-item:nth-child(2)::before {
-  background-image: url(../images/svg/clock.svg);
+  background-image: url(../images/clock.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .content-item:nth-child(3)::before {
-  background-image: url(../images/svg/computer.svg);
+  background-image: url(../images/computer.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .content-item:nth-child(4)::before {
-  background-image: url(../images/svg/astronaut.svg);
+  background-image: url(../images/astronaut.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -421,6 +431,8 @@ ul {
   margin-left: 30px;
 }
 
+/* Добавляет соц сети под описане */
+
 .team-social-list {
   display: flex;
   justify-content: center;
@@ -436,47 +448,19 @@ ul {
   height: 44px;
   background-color: #ffffff;
   fill: #afb1b8;
+
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: #ffffff;
-}
-
-.team-social-icon {
-  color: currentColor;
 }
 
 .team-social-link:hover {
-  background-color: #2196f3;
+  background-color: var(--hover-color);
   fill: #ffffff;
 }
 
 /* Клиенты */
-
-.clients-list-link {
-  width: 170px;
-  height: 92px;
-  background-color: #e5e5e5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #afb1b8;
-  border-radius: 4px;
-}
-
-.clients-list {
-  display: flex;
-  justify-content: center;
-}
-
-.clients-list-item:nth-child(n + 2) {
-  margin-left: 30px;
-}
-
-.clients-list-item:hover {
-  border: 1px solid #2196f3;
-}
 
 .clients-title {
   text-align: center;
@@ -488,11 +472,30 @@ ul {
   margin-bottom: 50px;
 }
 
-.clients-item-link {
-  width: 41px;
-  height: 47px;
+.clients-list {
   display: flex;
   justify-content: center;
+}
+
+.clients-item:nth-child(n + 2) {
+  margin-left: 30px;
+}
+
+.clients-item-link {
+  width: 170px;
+  height: 92px;
+  background-color: #ffffff;
+  fill: #afb1b8;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clients-item-link:hover {
+  fill: var(--hover-color);
+  border-color: var(--hover-color);
 }
 
 /* Footer */
@@ -603,7 +606,7 @@ ul {
 }
 
 .footer-social-link:hover {
-  background-color: #2196f3;
+  background-color: var(--hover-color);
 }
 
 /* -------------------------------------------------- */
