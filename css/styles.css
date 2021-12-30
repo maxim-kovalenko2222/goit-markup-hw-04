@@ -229,13 +229,15 @@ ul {
 /* Герой */
 
 .hero {
-  max-width: 1600px;
-  height: 600px;
-
   text-align: center;
 
   padding-top: 200px;
   padding-bottom: 200px;
+
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
 
   background-color: #c4c4c4;
   background-image: linear-gradient(
@@ -375,6 +377,10 @@ ul {
 
 /* Команда */
 
+.team {
+  background-color: var(--filter-button-color);
+}
+
 .main-team-title {
   font-weight: 700;
   font-size: 36px;
@@ -455,7 +461,8 @@ ul {
   border-radius: 50%;
 }
 
-.team-social-link:hover {
+.team-social-link:hover,
+.team-social-link:focus {
   background-color: var(--hover-color);
   fill: var(--hero-color);
 }
@@ -493,7 +500,8 @@ ul {
   justify-content: center;
 }
 
-.clients-item-link:hover {
+.clients-item-link:hover,
+.clients-item-link:focus {
   fill: var(--hover-color);
   border-color: var(--hover-color);
 }
@@ -605,7 +613,8 @@ ul {
   fill: #ffffff;
 }
 
-.footer-social-link:hover {
+.footer-social-link:hover,
+.footer-social-link:focus {
   background-color: var(--hover-color);
 }
 
